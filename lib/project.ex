@@ -3,7 +3,7 @@ defmodule CommonsPub.Projects.Project do
 
   use Pointers.Pointable,
     otp_app: :cpub_projects,
-    table_id: "0RGAN1SAT10NSAREMANYPE0P1E",
+    table_id: "PR0JECTSARESPACEST0C011ECT",
     source: "cpub_projects_project"
 
   alias CommonsPub.Projects.Project
