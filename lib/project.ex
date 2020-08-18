@@ -26,17 +26,13 @@ defmodule CommonsPub.Projects.Project.Migration do
   alias CommonsPub.Projects.Project
 
   @doc """
-  Migrates the Project table. Takes optional index options for
-  the index on the `reading` column. Direction is autodetected by default.
+  Migrates the Project table in the given or autodetected direction.
   """
-  def migrate_projects(index_opts \\ [], dir \\ direction())
-  def migrate_projects(index_opts, :up) do
+  def migrate_projects(dir \\ direction())
+  def migrate_projects(:up) do
     create_pointable_table(Project) do
     end
   end
-
-  defp migrate_projects(index_opts, :down) do
-    drop_pointable_table(Project)
-  end
+  def migrate_projects(:down), do: drop_pointable_table(Project)
 
 end
